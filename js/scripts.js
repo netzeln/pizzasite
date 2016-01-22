@@ -4,6 +4,10 @@ function Order(sizePie, toppings, numberPizzas){
   this.numberPizzas = numberPizzas;
 }
 
+Order.prototype.toppingsNumber =function(){
+  return this.toppings.length;
+}
+
 $(document).ready(function() {
 
 
