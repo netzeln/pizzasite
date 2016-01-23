@@ -12,8 +12,8 @@ describe('Order', function(){
   });
 
   it("adds the sizeCost method prototype to the order object", function(){
-    var testPizza = new Order("xLarge",["cheese", "onion"],"1");
-    expect(testPizza.sizeCost()).to.equal(14);
+    var testPizza = new Order("large",["cheese", "onion"],"1");
+    expect(testPizza.sizeCost()).to.equal(12);
   });
 });
 

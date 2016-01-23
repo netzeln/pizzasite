@@ -8,17 +8,19 @@ Order.prototype.toppingsNumber =function(){
   return this.toppings.length;
 }
 
-// Order.prototype.sizeCost =function(){
-//  var pieCost;
-//  function(){
-//   if (this.sizePie() = "large"){
-//     return = 12;
-//   }else if (this.sizePie() = "xLarge"){
-//     return = 14;
-//   }
-//   // return pieCost;
-//   }
-// }
+Order.prototype.sizeCost =function(){
+
+  if (this.sizePie === "xLarge"){
+    return  14;
+  } else if (this.sizePie === "large"){
+    return 12;
+  } else if (this.sizePie === "medium"){
+    return 10;
+  } else{
+    return 8;
+  }
+}
+
 // var orderCost = function(Order)){
 //   var
 // }
