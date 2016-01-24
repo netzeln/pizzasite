@@ -6,23 +6,27 @@ describe('Pizza', function(){
     expect(testPizza.numberPizzas).to.equal("1");
   });
 
-  it("adds the toppingsNumber proptotype to the Pizza object", function(){
-    var testPizza = new Pizza("xLarge",["cheese", "onion"],"1");
-    expect(testPizza.toppingsNumber()).to.equal(2);
-  });
 
-  it("adds the sizeCost method prototype to the order object", function(){
-    var testPizza = new Pizza("large",["cheese", "onion"],"1");
-    expect(testPizza.sizeCost()).to.equal(12);
+
+  it("adds the pizzaCost prototype to the order object", function(){
+    var testPizza = new Pizza("medium",["cheese", "onion", "pepperoni"],"3");
+    expect(testPizza.pizzaCost()).to.equal(34.50);
   });
 });
 
-describe("orderCost", function(){
-  it("calculates the cost of the whole order", function(){
-      var newPizza = new Pizza("medium",["cheese", "onion"],"2");
-    expect(orderCost(newPizza)).to.equal(22);
-  });
-});
+// describe ("Order", function(){
+//   it("combines the pizzas into a complete order", function(){
+//     var testOrder - new Order
+//     expect()
+//   });
+// });
+
+// describe("pizzaCost", function(){
+//   it("calculates the cost of the whole order", function(){
+//       var newPizza = new Pizza("medium",["cheese", "onion"],"2");
+//     expect(orderCost(newPizza)).to.equal(22);
+//   });
+// });
 
 // describe("orderCost", function(){
 //   var testPizza = new Order("large",["cheese", "onion"],"1");
