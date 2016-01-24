@@ -22,15 +22,22 @@ Pizza.prototype.pizzaCost = function(){
         pieCost = 0;
       }
       return (pieCost + (this.toppings.length / 2)) * this.numberPizzas;
-      }
+    }
 
-
+    function Order(name, address, methodPayment, pizzasOrdered){
+      this.name = name;
+      this.address = address;
+      this.methodPayment = methodPayment;
+      this.pizzasOrdered =[];
+    }
 
 // var orderCost = function(Order)){
 //   var
 // }
 $(document).ready(function() {
 
-
+//would like to have  pizza added to order displayed. maybe as a list
+//would like to display total order cost if possible as the orders are added
+// grab names and delivery address to the order
 
 });

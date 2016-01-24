@@ -8,9 +8,46 @@
 
     <script src="js/jquery-1.12.0.js"></script>
     <script src="js/scripts.js"></script>
-    <title></title>
+    <title>Nico Nicolino Pizzeria</title>
   </head>
   <body>
 
+    <div class=" container builder">
+      <form class="pizzaCreator" >
+              <div >
+                <h4> What size Pie would you like?</h4>
+                <select class="form-control" id="pieSize">
+                  <option value="small" selected>Small (10", $8)</option>
+                  <option value="medium">Medium (12", $10)</option>
+                  <option value="large">Large (14", $12)</option>
+                  <option value="xLarge">Extra Large (16", $14)</option>
+                </select>
+              </div>
+              <div class="toppings">
+                <h4>Pick Your Toppings ($.50 each)</h4>
+                <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox1" value="Extra Cheese"> Extra Cheese
+                </label>
+                <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox2" value="Pepperoni"> Pepperoni
+                </label>
+                <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox3" value="Onion"> Onions
+                </label>
+                <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox4" value="Mushrooms"> Mushrooms
+                </label>
+                <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox5" value="Green Peppers"> Green Peppers
+                </label>
+              </div>
+              <div >
+                <label for="numberPies"><strong>How Many?:</strong></label>
+                <input id="numberPies" type="number">
+              </div>
+              <button type="button" name="button">Add Pizza to Order</button>
+      </form>
+      <button type="button" name="button">Checkout</button>
+    </div>
   </body>
 </html>

@@ -14,23 +14,14 @@ describe('Pizza', function(){
   });
 });
 
-// describe ("Order", function(){
-//   it("combines the pizzas into a complete order", function(){
-//     var testOrder - new Order
-//     expect()
-//   });
-// });
-
-// describe("pizzaCost", function(){
-//   it("calculates the cost of the whole order", function(){
-//       var newPizza = new Pizza("medium",["cheese", "onion"],"2");
-//     expect(orderCost(newPizza)).to.equal(22);
-//   });
-// });
-
-// describe("orderCost", function(){
-//   var testPizza = new Order("large",["cheese", "onion"],"1");
-//   it("sets the base cost of the pizza by size",function(){
-//     expect(orderCost(sizePie)).to.equal(12);
-//   })
-// })
+describe ('Order', function(){
+  it("adds information about the order including name, address and the pizzas ordered", function(){
+    var testPizza = new Pizza("medium",["cheese", "onion", "pepperoni"],"3");
+    var testPizza2 = new Pizza("xLarge",["cheese"],"1");
+    var testOrder = new Order("Timmy", "123 Sesame St", "cash", [testPizza, testPizza2]);
+    expect(testOrder.name).to.equal("Timmy");
+    expect(testOrder.address).to.equal("123 Sesame St");
+    expect(testOrder.methodPayment).to.equal("cash");
+    expect(testOrder.pizzasOrdered).to.eql([]);
+  });
+});
