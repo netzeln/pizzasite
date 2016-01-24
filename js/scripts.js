@@ -9,7 +9,7 @@ Order.prototype.toppingsNumber =function(){
   return this.toppings.length;
 }
 
-Order.prototype.sizeCost =function(testPizza){
+Order.prototype.sizeCost =function(){
 
   if (this.sizePie === "xLarge"){
     return  14;
@@ -23,7 +23,7 @@ Order.prototype.sizeCost =function(testPizza){
 }
 
 var orderCost = function(testPizza){
-  return testPizza.sizeCost();
+  return testPizza.sizeCost() + (testPizza.toppingsNumber() / 2);
 
 }
 

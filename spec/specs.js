@@ -19,8 +19,8 @@ describe('Order', function(){
 
 describe("orderCost", function(){
   it("calculates the cost of the pizza", function(){
-      var testPizza = new Order("medium",["cheese", "onion"],"1");
-    expect(orderCost(testPizza)).to.equal(10);
+      var testPizza = new Order("medium",["cheese", "onion"],"2");
+    expect(orderCost(testPizza)).to.equal(11);
   });
 });
 
