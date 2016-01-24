@@ -23,7 +23,7 @@ Order.prototype.sizeCost =function(){
 }
 
 var orderCost = function(testPizza){
-  return testPizza.sizeCost() + (testPizza.toppingsNumber() / 2);
+  return (testPizza.sizeCost() + (testPizza.toppingsNumber() / 2)) * testPizza.numberPizzas;
 
 }
 
