@@ -1,3 +1,4 @@
+// var testPizza = new Order("medium",["cheese"],"2");
 function Order(sizePie, toppings, numberPizzas){
   this.sizePie = sizePie;
   this.toppings = toppings;
@@ -8,7 +9,7 @@ Order.prototype.toppingsNumber =function(){
   return this.toppings.length;
 }
 
-Order.prototype.sizeCost =function(){
+Order.prototype.sizeCost =function(testPizza){
 
   if (this.sizePie === "xLarge"){
     return  14;
@@ -19,6 +20,11 @@ Order.prototype.sizeCost =function(){
   } else{
     return 8;
   }
+}
+
+var orderCost = function(testPizza){
+  return testPizza.sizeCost();
+
 }
 
 // var orderCost = function(Order)){
