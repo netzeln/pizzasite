@@ -31,21 +31,32 @@ function Order(name, address, methodPayment, pizzasOrdered){
 
 
 // $(document).ready(function() {
+//
+// var yourOrder = new Order(yourName, yourAddress, yourPayment, yourPies);
+//
 //   $("form.pizzaCreator")submit(function(event){
 //     event.preventDefault();
 //     var selectedSize = $("input#pieSize").val();
-//     var selectedToppings = $("input[name=toppingCheck[]']:checked")
+//     var selectedToppings = [];
+        // $("input[name=toppingCheck[]']:checked").map(function(){
+        //     selectedToppings.push($(this).val());
+        //   };
 //     var selectedNumber = $("input#numberPies").val();
-  //  var newPizza = new Pizza(selectedSize, selectedToppings,selected Number);
+//     var newPizza = new Pizza(selectedSize, selectedToppings, selectedNumber);
+//    yourOrder.pizzasOrdered.push(newPizza);
 //   //would like to have  pizza added to order displayed. maybe as a list
 //   });
-//
-//   $("form.getInfo")submit(function(){
-//
+// //
+//   $("form.getInfo")submit(function(event){
+//     event.preventDefault();
+//     var yourName = $("form#name").val();
+//     var yourAddress = $("form#address").val();
+//     var yourPayment = $("form#payment").val();
+//     var yourPies = [];
 //   });
-//
-//
-// //would like to display total order cost if possible as the orders are added
-// //grab names and delivery address to the order
-//
+// //
+// //
+// // //would like to display total order cost if possible as the orders are added
+// // //grab names and delivery address to the order
+// //
 // });

@@ -24,4 +24,11 @@ describe ('Order', function(){
     expect(testOrder.methodPayment).to.equal("cash");
     expect(testOrder.pizzasOrdered).to.eql([]);
   });
+
+  it("adds the addPizza method prototype to the Order object",function(){
+    var testPizza = new Pizza("medium",["cheese", "onion", "pepperoni"],"3");
+    var testOrder = new Order("Timmy", "123 Sesame St", "cash", testPizza);
+    expect(testOrder.addPizza).to.eql([]);
+
+  });
 });
