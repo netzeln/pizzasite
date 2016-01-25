@@ -22,13 +22,17 @@ Pizza.prototype.pizzaCost = function(){
       return (pieCost + (this.toppings.length / 2)) * this.numberPizzas;
 }
 
+Pizza.prototype.addPizza = function(){
+  yourOrder.pizzasOrdered.push(this);
+}
+
 function Order(name, address, methodPayment, pizzasOrdered){
       this.name = name;
       this.address = address;
       this.methodPayment = methodPayment;
       this.pizzasOrdered =[];
   }
-
+var yourOrder = new Order();
 
 // $(document).ready(function() {
 //

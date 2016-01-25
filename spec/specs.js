@@ -12,6 +12,13 @@ describe('Pizza', function(){
     var testPizza = new Pizza("medium",["cheese", "onion", "pepperoni"],"3");
     expect(testPizza.pizzaCost()).to.equal(34.50);
   });
+
+  it("adds the addPizza method prototype to the Order object",function(){
+    var testPizza = new Pizza("medium",["cheese", "onion", "pepperoni"],"3");
+    var testOrder = new Order();
+    expect(testPizza.addPizza()).to.eql([]);
+
+  });
 });
 
 describe ('Order', function(){
@@ -25,10 +32,10 @@ describe ('Order', function(){
     expect(testOrder.pizzasOrdered).to.eql([]);
   });
 
-  it("adds the addPizza method prototype to the Order object",function(){
-    var testPizza = new Pizza("medium",["cheese", "onion", "pepperoni"],"3");
-    var testOrder = new Order("Timmy", "123 Sesame St", "cash", testPizza);
-    expect(testOrder.addPizza).to.eql([]);
+  // it("adds the addPizza method prototype to the Order object",function(){
+  //   var testPizza = new Pizza("medium",["cheese", "onion", "pepperoni"],"3");
+  //   var testOrder = new Order("Timmy", "123 Sesame St", "cash", testPizza);
+  //   expect(testOrder.addPizza).to.eql([]);
 
-  });
+  // });
 });
