@@ -15,8 +15,8 @@ describe('Pizza', function(){
 
   it("adds the addPizza method prototype to the Order object",function(){
     var testPizza = new Pizza("medium",["cheese", "onion", "pepperoni"],"3");
-    var testOrder = new Order();
-    expect(testPizza.addPizza()).to.eql([]);
+    var yourOrder = new Order();
+    expect(testPizza.addPizza()).to.eql([testPizza]);
 
   });
 });

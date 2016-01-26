@@ -23,7 +23,8 @@ Pizza.prototype.pizzaCost = function(){
 }
 
 Pizza.prototype.addPizza = function(){
-  yourOrder.pizzasOrdered.push(this);
+ yourOrder.pizzasOrdered.push(this);
+ return yourOrder.pizzasOrdered;
 }
 
 function Order(name, address, methodPayment, pizzasOrdered){
