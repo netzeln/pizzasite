@@ -35,10 +35,12 @@ function Order(name, address, methodPayment, pizzasOrdered){
   }
 
   Order.prototype.totalCost = function(){
-    var costOrder;
-    var pizzasInOrder = yourOrder.pizzasOrdered;
-    pizzasInOrder.forEach(function(pizza){
-      costOrder = costOrder + pizza.pizzaCost();
+    var costOrder = [];
+    // var pizzasInOrder = yourOrder.pizzasOrdered;
+    yourOrder.pizzasOrdered.forEach(function(pizza){
+      // costOrder = parseInt(costOrder) + this.pizzaCost();
+        costOrder.push(pizza.pizzaCost());
+      console.log(costOrder);
     });
     return costOrder;
   }

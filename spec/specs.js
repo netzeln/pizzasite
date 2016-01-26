@@ -8,7 +8,7 @@ describe('Pizza', function(){
 
 
 
-  it("adds the pizzaCost prototype to the order object", function(){
+  it("adds the pizzaCost prototype to the pizza object", function(){
     var testPizza = new Pizza("medium",["cheese", "onion", "pepperoni"],"3");
     expect(testPizza.pizzaCost()).to.equal(34.50);
   });
