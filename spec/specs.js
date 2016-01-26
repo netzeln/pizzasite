@@ -32,10 +32,12 @@ describe ('Order', function(){
     expect(testOrder.pizzasOrdered).to.eql([]);
   });
 
-  // it("adds the addPizza method prototype to the Order object",function(){
-  //   var testPizza = new Pizza("medium",["cheese", "onion", "pepperoni"],"3");
-  //   var testOrder = new Order("Timmy", "123 Sesame St", "cash", testPizza);
-  //   expect(testOrder.addPizza).to.eql([]);
 
-  // });
+  it("adds the totalCost method prototype to the Order object",function(){
+    var testPizza = new Pizza("medium",["cheese", "onion"],2);
+    var testPizza2 = new Pizza("small", ["mushroom", "onion"], 1 );
+    var yourOrder = new Order("Timmy", "123 Sesame St", "cash", [testPizza, testPizza2]);
+    expect(yourOrder.totalCost()).to.equal(31);
+
+  });
 });

@@ -33,6 +33,15 @@ function Order(name, address, methodPayment, pizzasOrdered){
       this.methodPayment = methodPayment;
       this.pizzasOrdered =[];
   }
+
+  Order.prototype.totalCost = function(){
+    var costOrder;
+    var pizzasInOrder = yourOrder.pizzasOrdered;
+    pizzasInOrder.forEach(function(pizza){
+      costOrder = costOrder + pizza.pizzaCost();
+    });
+    return costOrder;
+  }
 var yourOrder = new Order();
 
 // $(document).ready(function() {
