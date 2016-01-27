@@ -1,3 +1,15 @@
 .builder{
   background-color: grey;
 }
+
+.underLine {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.pizza-Creator {
+  background-color: orange;
+  border-radius: 15px
+  padding: 10px;
+}
