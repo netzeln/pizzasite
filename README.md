@@ -10,7 +10,7 @@ _{User can select a number of different options and order multiple pizzas. It ha
 
 ## Setup/Installation Requirements
 
-* _run it as a website here_
+* _run it as a website here_ [http://netzeln.github.io/pizzasite/]
 *_or clone it and look at it on your own_
 
 
