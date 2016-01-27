@@ -28,7 +28,7 @@
                   <label for="address">Where Should We Deliver the Pizza?</label>
                   <input type="text" class="form-control" id="address">
                 </div>
-                    <!-- <div >
+                    <div >
                       <h4> How Would You Like to Pay?</h4>
                       <select class="form-control" id="payment">
                         <option value="cash" selected>Cash</option>
@@ -36,7 +36,7 @@
                         <option value="credit">Credit Card</option>
                         <option value="bitcoin">Bitcoin</option>
                       </select>
-                    </div> -->
+                    </div>
                 <p> Now Tell us about the pizzas you'd like? You can Add more than one pizza to your order, but Make sure to select all the pizzas you want before you submit your order</p>
                 <span class="btn btn-success add-another-pizza"> Add A Pizza to your order</span>
               </div> <!--end ofgetinfo/underLine section-->
@@ -80,7 +80,13 @@
               </form>
               </div>
           <div class="orderConfirm col-md-6">
-            <p> Thanks blank, we'll send your pizzas here</p>
+            <p> Thanks for your Order, <span class="printName"></span>. </p>
+            <p>If we have everything correct, we will be sending the following Pizzas:</p>
+            <ul id="pizzaList">
+            </ul>
+            <p> To this Address: <span class="address"></span>.</p>
+            <p> The Total Cost of your Order is:<span class="printTotalCost">$ <span id="theTotalCost"> </span></span>
+            <p> You've indicated you'd like to pay by <span class="id"><span>.  
           </div>
 
     </div>

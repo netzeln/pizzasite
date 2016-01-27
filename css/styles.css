@@ -13,3 +13,14 @@
   border-radius: 15px
   padding: 10px;
 }
+.orderConfirm {
+  display: none;
+  background-color: green;
+  border-radius: 15px;
+}
+
+
+.printTotalCost{
+  font-weight: bolder;
+  font-size: 25px;
+}

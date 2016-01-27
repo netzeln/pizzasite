@@ -23,15 +23,12 @@ Pizza.prototype.pizzaCost = function(){
       return (pieCost + (this.toppings.length / 2)) * this.numberPizzas;
 }
 
-// Pizza.prototype.addPizza = function(){
-//  yourOrder.pizzasOrdered.push(this);
-//  return yourOrder.pizzasOrdered;
-// }
 
-function Order(name, address, pizzasOrdered){
+
+function Order(name, address, methodPayment, pizzasOrdered){
       this.name = name;
       this.address = address;
-      // this.methodPayment = methodPayment;
+      this.methodPayment = methodPayment;
       this.pizzasOrdered =[];
   }
 
@@ -40,13 +37,17 @@ function Order(name, address, pizzasOrdered){
    this.pizzasOrdered.forEach(function(Pizza){
      costOrder = costOrder + Pizza.cost;
    });
-    // $(this.pizzasOrdered).each(function(pizza){
-    //   costOrder = costOrder + pizza.cost.val();
-    //   console.log(costOrder);
-    // });
+
     return costOrder;
   }
-
+ Order.prototype.tipCalculator = function(){
+   if (this.delivery === "pickup"){
+     return (this.totalCost) * 0.15;
+   } else if (this.delivery ==="delivered"){
+     return this.pizzasOrderd.length + 4
+   } else {
+     return (this.totalCost) * 0.2;
+ }
 
 $(document).ready(function() {
 
@@ -54,9 +55,9 @@ $(document).ready(function() {
     event.preventDefault();
     var yourName = $("input#order-name").val();
     var yourAddress = $("input#address").val();
-    // var yourPayment = $("form#payment").val();
-    var yourOrder = new Order(yourName, yourAddress, yourPies);
-    var yourPies = [];
+    var yourPayment = $("form#payment").val();
+    var yourOrder = new Order(yourName, yourAddress, yourPayment );
+
 
     $(".pizza-Creator").each(function(){
       var selectedSize = $(this).find("#pieSize").val();
@@ -72,10 +73,14 @@ $(document).ready(function() {
         console.log(newPizza.pizzaCost());
       });
 
+      $(".orderConfirm").show();
 
+      $(".printName").text(yourOrder.name);
+      $(".address").text(yourOrder.address);
+      $("#theTotalCost").empty().append(yourOrder.totalCost());
+      $("#paymentMethod").text(yourOrder.methodPayment);
 
    console.log(yourOrder);
-
    console.log(yourOrder.totalCost());
   //would like to have  pizza added to order displayed. maybe as a list
   });
