@@ -1,6 +1,6 @@
 .jumbotron{
   text-align: center;
-
+  background-color: tomato;
 }
 body{
   background-color: #FAEBD7;
@@ -16,14 +16,16 @@ body{
 }
 
 .pizza-Creator {
-  background-color: orange;
+  background-color: tomato;
   border-radius: 15px
   padding: 10px;
 }
 .orderConfirm {
   display: none;
-  background-color: green;
+  background-color: ForestGreen;
   border-radius: 15px;
+  text size: 20;
+  color: White;
 }
 
 

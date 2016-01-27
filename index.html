@@ -14,9 +14,9 @@
     <div class="jumbotron">
       <h1>Nico Nicolino Pizzeria</h1>
     </div>
-  <div class="container">
-    <h2>Please Enter your Delivery information:</h2>
-    <div class="row">
+    <div class="container">
+      <h2>Please Enter your Delivery information:</h2>
+      <div class="row">
           <div class="container getContact col-md-6">
             <form id="getOrder" >
               <div class="underLine">
@@ -90,20 +90,19 @@
                 <span class="btn btn-success add-another-pizza"> Add another Pizza to your order</span>
                 <button type="submit" class="btn btn-danger">Complete Your Order</button>
               </form>
-              </div>
+            </div>
           <div class="orderConfirm col-md-6">
-            <p> Thanks for your Order, <span class="printName"></span>. </p>
-            <p>If we have everything correct, we will be sending the following Pizzas:</p>
+            <p> Thanks for your Order, <span class="printName"></span> ! </p>
+            <p>If we have everything correct, we will prepare the following Pizzas for you:</p>
             <ul id="pizzaList">
             </ul>
-            <p> To this Address: <span class="address"></span>. Unless, of course, you plan to join us in the restaurant!</p>
-            <p> The Total Cost of your Order is:<span class="printTotalCost">$ <span id="theTotalCost"> </span></span>
+            <p> And send them to this Address: <br><span class="address"></span><br> if you chose delivery (or if you don't show up to get them!)
+            <p> The Total Cost of your Order is:  <span class="printTotalCost">$ <span id="theTotalCost">   </span></span>
             <p> You've indicated you'd like to pay by <span id="paymentMethod"><span>.</p>
-            <p> If you like your service, it would be kind to add a gratuity to your order.<span id="showTip">Click Here to Calculate a tip</span>.
-            <p id="viewTip"> Based on your order cost and delivery options, we recommend a $<span id="tipAmount"></span> Gratuity, for a grand total of $<span id="grandTotal"></span></p>
+            <p> If you like your service, it would be kind to add a gratuity to your order.<br> <span id="showTip">Click Here to Calculate a tip</span>.
+            <p id="viewTip"> Based on your order cost and delivery options, we recommend <span id="tipAmount"></span> Gratuity, for a grand total of $<span id="grandTotal"></span></p>
           </div>
-
-    </div>
-
+        </div>
+      </div>
   </body>
 </html>

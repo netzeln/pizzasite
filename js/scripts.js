@@ -55,14 +55,20 @@ function Order(name, address, delivery, methodPayment, pizzasOrdered){
  }
 
  Order.prototype.tipCalculator = function(){
-   if (this.delivery === "pickup"){
-     return ((this.totalCost()) * 0.15);
-   } else if (this.delivery ==="delivered"){
-     return (this.totalPies()) + 4;
-   } else {
-     return ((this.totalCost()) * 0.2);
+   if (this.totalCost() > 0){
+     if (this.delivery === "pickup"){
+       return ((this.totalCost()) * 0.15);
+     } else if (this.delivery ==="delivered"){
+       return (this.totalPies()) + 4;
+     } else {
+       return ((this.totalCost()) * 0.2);
+     }
+   }
+   else {
+   return  0;
+  }
  }
-}
+
 Order.prototype.grandTotal = function(){
 
   var grandTotalTip = (parseFloat(this.totalCost()) + parseFloat(this.tipCalculator()));
@@ -79,7 +85,7 @@ $(document).ready(function() {
     var yourAddress = $("input#address").val();
     var yourPayment = $("#payment").val();
     var yourOrder = new Order(yourName, yourAddress, yourDelivery, yourPayment );
-console.log(yourPayment);
+
 
 
     $(".pizza-Creator").each(function(){
@@ -102,13 +108,18 @@ console.log(yourPayment);
       $(".address").text(yourOrder.address);
       $("#theTotalCost").empty().append(yourOrder.totalCost());
       $("#paymentMethod").text(yourPayment);
-      $("#tipAmount").text((yourOrder.tipCalculator()).toFixed(2));
+
+      if (yourOrder.tipCalculator() > 0){
+          $("#tipAmount").text(" a $ " +(yourOrder.tipCalculator()).toFixed(2));
+        }else{
+          $("#tipAmount").text(" that you buy some pizzas. Here's a Tip while you're thinking 'Wise Man once Say: Forgiveness is Divine, but never pay full price for Late Pizza' -- 'Master Splinter'");
+        }
       $("#grandTotal").text(yourOrder.grandTotal());
 
       $("ul#pizzaList").text("");
-      yourOrder.pizzasOrdered.forEach(function(Pizza) {
-      $("ul#pizzaList").append("<li>" + Pizza.describePie() + "</li>");
-    });
+        yourOrder.pizzasOrdered.forEach(function(Pizza) {
+          $("ul#pizzaList").append("<li>" + Pizza.describePie() + "</li>");
+        });
       $("#showTip").click(function(){
         $("#viewTip").fadeIn();
       });
