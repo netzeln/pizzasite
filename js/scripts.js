@@ -27,10 +27,10 @@ Pizza.prototype.addPizza = function(){
  return yourOrder.pizzasOrdered;
 }
 
-function Order(name, address, methodPayment, pizzasOrdered){
+function Order(name, address, pizzasOrdered){
       this.name = name;
       this.address = address;
-      this.methodPayment = methodPayment;
+      // this.methodPayment = methodPayment;
       this.pizzasOrdered =[];
   }
 
@@ -44,33 +44,42 @@ function Order(name, address, methodPayment, pizzasOrdered){
     });
     return costOrder;
   }
-var yourOrder = new Order();
+// var yourOrder = new Order();
 
-// $(document).ready(function() {
-//
+$(document).ready(function() {
+
 // var yourOrder = new Order(yourName, yourAddress, yourPayment, yourPies);
+
+  $("form#getOrder").submit(function(event){
+    event.preventDefault();
+    var yourName = $("input#order-name").val();
+    var yourAddress = $("input#address").val();
+    // var yourPayment = $("form#payment").val();
+    var yourPies = [];
+    var selectedSize = $("#pieSize").val();
+    var selectedToppings = []
+    $("input[name='toppingCheck']:checked").each(function ()
+      {
+            selectedToppings.push($(this).val());
+      });
+
+
+
+    var selectedNumber = $("#numberPies").val();
+    var yourOrder = new Order(yourName, yourAddress, yourPies);
+    var newPizza = new Pizza(selectedSize, selectedToppings, selectedNumber);
+   yourOrder.pizzasOrdered.push(newPizza);
+   console.log(newPizza);
+   console.log(yourOrder);
+  //would like to have  pizza added to order displayed. maybe as a list
+  });
+    });
 //
-//   $("form.pizzaCreator")submit(function(event){
-//     event.preventDefault();
-//     var selectedSize = $("input#pieSize").val();
-//     var selectedToppings = [];
-        // $("input[name=toppingCheck[]']:checked").map(function(){
-        //     selectedToppings.push($(this).val());
-        //   };
-//     var selectedNumber = $("input#numberPies").val();
-//     var newPizza = new Pizza(selectedSize, selectedToppings, selectedNumber);
-//    yourOrder.pizzasOrdered.push(newPizza);
-//   //would like to have  pizza added to order displayed. maybe as a list
-//   });
-// //
-//   $("form.getInfo")submit(function(event){
-//     event.preventDefault();
-//     var yourName = $("form#name").val();
-//     var yourAddress = $("form#address").val();
-//     var yourPayment = $("form#payment").val();
-//     var yourPies = [];
-//   });
-// //
+
+
+
+  // });
+//
 // //
 // // //would like to display total order cost if possible as the orders are added
 // // //grab names and delivery address to the order
