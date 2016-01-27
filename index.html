@@ -24,8 +24,19 @@
                   <label for="orderName">What's Your Name?</label>
                   <input type="text" class="form-control" id="order-name">
                 </div>
+                <div>
+                  <label class="radio-inline">
+                    <input type="radio" name="delivery" id="inlineRadio1" value="delivered" checked> Delivered to My Door
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="delivery" id="inlineRadio2" value="pickup"> I'll Pick it Up
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="delivery" id="inlineRadio3" value="inStore"> Have it ready, I'll eat it at the Restaurant
+                  </label>
+                </div>
                 <div class="form-group">
-                  <label for="address">Where Should We Deliver the Pizza?</label>
+                  <label for="address">What's Your Address?</label>
                   <input type="text" class="form-control" id="address">
                 </div>
                     <div >
@@ -41,7 +52,8 @@
                 <span class="btn btn-success add-another-pizza"> Add A Pizza to your order</span>
               </div> <!--end ofgetinfo/underLine section-->
               <div id="pizza-creation">
-                <!-- <div class="pizza-Creator"
+                <!-- For Some Reason the HTML  on the initial form wasn't capturing the number of Pizzas as a value. however, it worked in the js appended version, which actually made the page look nicer
+                <div class="pizza-Creator"
                   <div>
                     <h4> What size Pie would you like?</h4>
                     <select class="form-control" id="pieSize">
@@ -73,7 +85,7 @@
                     <label for="numberPies"><strong>How Many?:</strong></label>
                     <input id="numberPies" type="number">
                   </div>
-                </div> <!--end of pizza-creator class div-->
+                </div> end of pizza-creator class div-->
               </div> <!--end of pizza creation id-->
                 <span class="btn btn-success add-another-pizza"> Add another Pizza to your order</span>
                 <button type="submit" class="btn btn-danger">Complete Your Order</button>
@@ -84,9 +96,11 @@
             <p>If we have everything correct, we will be sending the following Pizzas:</p>
             <ul id="pizzaList">
             </ul>
-            <p> To this Address: <span class="address"></span>.</p>
+            <p> To this Address: <span class="address"></span>. Unless, of course, you plan to join us in the restaurant!</p>
             <p> The Total Cost of your Order is:<span class="printTotalCost">$ <span id="theTotalCost"> </span></span>
-            <p> You've indicated you'd like to pay by <span class="id"><span>.  
+            <p> You've indicated you'd like to pay by <span id="paymentMethod"><span>.</p>
+            <p> If you like your service, it would be kind to add a gratuity to your order.<span id="showTip">Click Here to Calculate a tip</span>.
+            <p id="viewTip"> Based on your order cost and delivery options, we recommend a $<span id="tipAmount"></span> Gratuity, for a grand total of $<span id="grandTotal"></span></p>
           </div>
 
     </div>

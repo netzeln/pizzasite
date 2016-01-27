@@ -23,11 +23,16 @@ Pizza.prototype.pizzaCost = function(){
       return (pieCost + (this.toppings.length / 2)) * this.numberPizzas;
 }
 
+Pizza.prototype.describePie = function(){
+   var toppingsList = this.toppings.toString();
+  return this.numberPizzas + " " + this.sizePie + " Pizza(s) with " + toppingsList;
 
+}
 
-function Order(name, address, methodPayment, pizzasOrdered){
+function Order(name, address, delivery, methodPayment, pizzasOrdered){
       this.name = name;
       this.address = address;
+      this.delivery = delivery;
       this.methodPayment = methodPayment;
       this.pizzasOrdered =[];
   }
@@ -38,25 +43,43 @@ function Order(name, address, methodPayment, pizzasOrdered){
      costOrder = costOrder + Pizza.cost;
    });
 
-    return costOrder;
+    return (costOrder).toFixed(2);
   }
+
+ Order.prototype.totalPies = function(){
+   var totalNumberPies = 0;
+   this.pizzasOrdered.forEach(function(Pizza){
+     totalNumberPies = totalNumberPies + Pizza.numberPizzas;
+   });
+   return totalNumberPies;
+ }
+
  Order.prototype.tipCalculator = function(){
    if (this.delivery === "pickup"){
-     return (this.totalCost) * 0.15;
+     return ((this.totalCost()) * 0.15);
    } else if (this.delivery ==="delivered"){
-     return this.pizzasOrderd.length + 4
+     return (this.totalPies()) + 4;
    } else {
-     return (this.totalCost) * 0.2;
+     return ((this.totalCost()) * 0.2);
  }
+}
+Order.prototype.grandTotal = function(){
+
+  var grandTotalTip = (parseFloat(this.totalCost()) + parseFloat(this.tipCalculator()));
+  return grandTotalTip.toFixed(2);
+}
+
 
 $(document).ready(function() {
 
   $("form#getOrder").submit(function(event){
     event.preventDefault();
     var yourName = $("input#order-name").val();
+    var yourDelivery = $("input[name='delivery']:checked").val();
     var yourAddress = $("input#address").val();
-    var yourPayment = $("form#payment").val();
-    var yourOrder = new Order(yourName, yourAddress, yourPayment );
+    var yourPayment = $("#payment").val();
+    var yourOrder = new Order(yourName, yourAddress, yourDelivery, yourPayment );
+console.log(yourPayment);
 
 
     $(".pizza-Creator").each(function(){
@@ -78,10 +101,17 @@ $(document).ready(function() {
       $(".printName").text(yourOrder.name);
       $(".address").text(yourOrder.address);
       $("#theTotalCost").empty().append(yourOrder.totalCost());
-      $("#paymentMethod").text(yourOrder.methodPayment);
+      $("#paymentMethod").text(yourPayment);
+      $("#tipAmount").text((yourOrder.tipCalculator()).toFixed(2));
+      $("#grandTotal").text(yourOrder.grandTotal());
 
-   console.log(yourOrder);
-   console.log(yourOrder.totalCost());
+      $("ul#pizzaList").text("");
+      yourOrder.pizzasOrdered.forEach(function(Pizza) {
+      $("ul#pizzaList").append("<li>" + Pizza.describePie() + "</li>");
+    });
+      $("#showTip").click(function(){
+        $("#viewTip").fadeIn();
+      });
   //would like to have  pizza added to order displayed. maybe as a list
   });
 
