@@ -1,26 +1,27 @@
-# _{Application Name}_
+# _{Pizza Site Code Review}_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _{User can order multiple Pizzas}, {2016-1-27}_
 
-#### By _**{List of contributors}**_
+#### By _**{Nic Netzel, with gracious thanks to awesome pair partners earlier in the week**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_{User can select a number of different options and order multiple pizzas. It has a tip calculator tht is dependent on the delivery method to suggest the tip. }_
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+* _run it as a website here_
+*_or clone it and look at it on your own_
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_The Spec Tests are still failing, because I don't know the syntax to write the fake input information when it is within multiple arrays and objects and prototypes that need to talk to each other.
+
+Also, the tip calculator math uses a mix of toFloat and toFixed, so it tends to be off by a penny in favor of the seller, but we'll call that a feature, not a bug
+
+given more time there are other features I'd like to try to implement, including making it prettier_
 
 ## Support and contact details
 
@@ -28,10 +29,10 @@ _{Let people know what to do if they run into any issues or have questions, idea
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+_{Html, CSS, jQuery, javascript}_
 
 ### License
 
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
+*{nonLegal Lisence: if you want it, you got it (just don't make money with my math errors)}*
 
 Copyright (c) 2015 **_{List of contributors or company name}_**
