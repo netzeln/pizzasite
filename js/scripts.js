@@ -23,8 +23,9 @@ Pizza.prototype.pizzaCost = function(){
 }
 
 Pizza.prototype.addPizza = function(){
- yourOrder.pizzasOrdered.push(this);
- return yourOrder.pizzasOrdered;
+ return yourOrder.pizzasOrdered.push(this);
+
+
 }
 
 function Order(name, address, methodPayment, pizzasOrdered){
@@ -42,6 +43,9 @@ function Order(name, address, methodPayment, pizzasOrdered){
     });
     return costOrder;
   }
+
+  Order.prototype.addPizza = function(){
+   return this.pizzasOrdered.push();
 var yourOrder = new Order();
 
 // $(document).ready(function() {

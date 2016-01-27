@@ -15,8 +15,8 @@ describe('Pizza', function(){
 
   it("adds the addPizza method prototype to the Order object",function(){
     var testPizza = new Pizza("medium",["cheese", "onion", "pepperoni"],"3");
-    var yourOrder = new Order();
-    expect(testPizza.addPizza()).to.eql([testPizza]);
+  var testOrder = new Order("Timmy", "123 Sesame St", "cash", [testPizza])
+    expect(testPizza.addPizza()).to.eql({testPizza});
 
   });
 });
@@ -25,7 +25,7 @@ describe ('Order', function(){
   it("adds information about the order including name, address and the pizzas ordered", function(){
     var testPizza = new Pizza("medium",["cheese", "onion", "pepperoni"],"3");
     var testPizza2 = new Pizza("xLarge",["cheese"],"1");
-    var testOrder = new Order("Timmy", "123 Sesame St", "cash", [testPizza, testPizza2]);
+    var testOrder = new Order("Timmy", "123 Sesame St", "cash", []);
     expect(testOrder.name).to.equal("Timmy");
     expect(testOrder.address).to.equal("123 Sesame St");
     expect(testOrder.methodPayment).to.equal("cash");
