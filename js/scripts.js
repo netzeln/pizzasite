@@ -41,6 +41,7 @@ function Order(name, address, delivery, methodPayment, pizzasOrdered){
     var costOrder = 0;
    this.pizzasOrdered.forEach(function(Pizza){
      costOrder = costOrder + Pizza.cost;
+     console.log("hello")
    });
 
     return (costOrder).toFixed(2);

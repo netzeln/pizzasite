@@ -31,22 +31,30 @@ describe ('Order', function(){
 
   it("adds the totalCost method prototype to the Order object",function(){
     var testPizza = new Pizza("medium",["cheese", "onion"],2);
+    testPizza.cost = 30;
     var testPizza2 = new Pizza("small", ["mushroom", "onion"], 1 );
-    var testOrder = new Order("Timmy", "123 Sesame St", "delivery", "cash", [testPizza, testPizza2]);
-    expect(testOrder.totalCost()).to.equal(31);
+    testPizza2.cost = 1;
+    var testOrder = new Order("Timmy", "123 Sesame St", "delivery", "cash");
+    testOrder.pizzasOrdered.push(testPizza);
+    testOrder.pizzasOrdered.push(testPizza2);
+    expect(testOrder.totalCost()).to.equal("31.00");
   });
 
   it ("addst the totalNumberPies prototype to calculate the total number of pizzas in an order", function(){
     var testPizza = new Pizza("medium",["cheese", "onion"],2);
     var testPizza2 = new Pizza("small", ["mushroom", "onion"], 1 );
+
     var testOrder = new Order("Timmy", "123 Sesame St", "delivery", "cash", [testPizza, testPizza2]);
+    testOrder.pizzasOrdered.push(testPizza);
+    testOrder.pizzasOrdered.push(testPizza2);
     expect(testOrder.totalPies()).to.equal(3);
   });
 
   it ("adds the tip calculator prototype to order object", function(){
     var testPizza = new Pizza("medium",["cheese", "onion"],2);
     var testOrder = new Order("Timmy", "123 Sesame St", "delivered", "cash", [testPizza]);
-    expect (testOrder.tipCalculator).to.equal(6);
+    testOrder.pizzasOrdered = [1];
+    expect (testOrder.tipCalculator()).to.equal(6);
 
   });
 });
